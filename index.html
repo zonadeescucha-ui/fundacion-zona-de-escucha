@@ -1,1 +1,1258 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Fundación Zona de Escucha. Fundación sin ánimo de lucro orientada al bienestar emocional y la salud mental de la comunidad."
+    >
+
+    <title>Fundación Zona de Escucha</title>
+
+
+    <style>
+
+        /* =========================================
+           CONFIGURACIÓN GENERAL
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #263238;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1180px;
+            margin: auto;
+        }
+
+
+        /* =========================================
+           COLORES
+        ========================================= */
+
+        :root {
+            --verde: #2d8c83;
+            --verde-oscuro: #1f5f5b;
+            --verde-claro: #e8f6f4;
+            --azul: #244f5b;
+            --gris: #64747a;
+            --blanco: #ffffff;
+            --fondo: #f7faf9;
+        }
+
+
+        /* =========================================
+           HEADER
+        ========================================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(255, 255, 255, 0.97);
+
+            border-bottom: 1px solid #e6eeee;
+        }
+
+        .nav {
+            min-height: 82px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+
+            color: var(--azul);
+
+            font-size: 1.05rem;
+            font-weight: bold;
+        }
+
+        .logo-symbol {
+            width: 46px;
+            height: 46px;
+
+            border-radius: 50%;
+
+            background: var(--verde);
+
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-weight: bold;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+
+            gap: 25px;
+        }
+
+        .menu a {
+            color: #455a60;
+
+            font-size: 0.92rem;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: var(--verde);
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .hero {
+            min-height: 650px;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eaf8f6 0%,
+                    #f8fcfb 60%,
+                    #ffffff 100%
+                );
+        }
+
+        .hero-content {
+            max-width: 760px;
+
+            padding: 90px 0;
+        }
+
+        .tag {
+            display: inline-block;
+
+            margin-bottom: 20px;
+
+            color: var(--verde);
+
+            font-size: 0.85rem;
+            font-weight: bold;
+
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .hero h1 {
+            color: var(--azul);
+
+            font-size: clamp(2.8rem, 7vw, 5rem);
+
+            line-height: 1.05;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--verde);
+        }
+
+        .hero p {
+            max-width: 680px;
+
+            color: var(--gris);
+
+            font-size: 1.15rem;
+
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 15px;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 14px 25px;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .button-primary {
+            background: var(--verde);
+
+            color: white;
+        }
+
+        .button-primary:hover {
+            background: var(--verde-oscuro);
+
+            transform: translateY(-2px);
+        }
+
+        .button-outline {
+            border: 2px solid var(--verde);
+
+            color: var(--verde);
+        }
+
+        .button-outline:hover {
+            background: var(--verde);
+
+            color: white;
+        }
+
+
+        /* =========================================
+           SECCIONES
+        ========================================= */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-header {
+            text-align: center;
+
+            max-width: 760px;
+
+            margin: 0 auto 50px;
+        }
+
+        .section-label {
+            color: var(--verde);
+
+            font-size: 0.82rem;
+
+            font-weight: bold;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+        }
+
+        .section-header h2 {
+            color: var(--azul);
+
+            font-size: 2.5rem;
+
+            margin-top: 8px;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--gris);
+        }
+
+
+        /* =========================================
+           QUIÉNES SOMOS
+        ========================================= */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 1.2fr 0.8fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: var(--azul);
+
+            font-size: 1.8rem;
+
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: var(--gris);
+
+            margin-bottom: 18px;
+        }
+
+        .about-box {
+            padding: 40px;
+
+            border-radius: 22px;
+
+            background: var(--verde-claro);
+
+            border-left: 5px solid var(--verde);
+        }
+
+        .about-box h3 {
+            color: var(--verde-oscuro);
+
+            margin-bottom: 15px;
+        }
+
+        .about-box p {
+            color: #526b70;
+        }
+
+
+        /* =========================================
+           NUESTRO TRABAJO
+        ========================================= */
+
+        .work {
+            background: var(--fondo);
+        }
+
+        .cards {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 24px;
+        }
+
+        .card {
+            background: white;
+
+            padding: 32px;
+
+            border-radius: 20px;
+
+            border: 1px solid #e4eeee;
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 15px 35px rgba(36, 79, 91, 0.08);
+        }
+
+        .icon {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 15px;
+
+            background: var(--verde-claro);
+
+            color: var(--verde);
+
+            font-size: 1.4rem;
+
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: var(--azul);
+
+            font-size: 1.2rem;
+
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--gris);
+
+            font-size: 0.95rem;
+        }
+
+
+        /* =========================================
+           PARTICIPACIÓN
+        ========================================= */
+
+        .participate {
+            background: var(--azul);
+
+            color: white;
+
+            text-align: center;
+        }
+
+        .participate h2 {
+            font-size: 2.5rem;
+
+            margin-bottom: 15px;
+        }
+
+        .participate p {
+            max-width: 720px;
+
+            margin: 0 auto 30px;
+
+            color: #d9e7e8;
+        }
+
+
+        /* =========================================
+           TRANSPARENCIA
+        ========================================= */
+
+        .transparency {
+            background: white;
+        }
+
+        .transparency-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .document {
+            padding: 28px;
+
+            border: 1px solid #e1ebeb;
+
+            border-radius: 18px;
+
+            transition: 0.3s;
+        }
+
+        .document:hover {
+            border-color: var(--verde);
+        }
+
+        .document h3 {
+            color: var(--azul);
+
+            margin-bottom: 8px;
+        }
+
+        .document p {
+            color: var(--gris);
+
+            font-size: 0.93rem;
+        }
+
+
+        /* =========================================
+           CONTACTO
+        ========================================= */
+
+        .contact {
+            background: var(--verde-claro);
+        }
+
+        .contact-content {
+            max-width: 760px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .contact-content h2 {
+            color: var(--azul);
+
+            font-size: 2.5rem;
+
+            margin-bottom: 15px;
+        }
+
+        .contact-content p {
+            color: var(--gris);
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+            background: #173e46;
+
+            color: white;
+
+            padding: 55px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+
+            grid-template-columns: 2fr 1fr 1fr;
+
+            gap: 40px;
+
+            margin-bottom: 40px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        footer p,
+        footer li {
+            color: #b9cecf;
+
+            font-size: 0.92rem;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 8px;
+        }
+
+        .copyright {
+            padding-top: 20px;
+
+            border-top: 1px solid rgba(255,255,255,0.12);
+
+            text-align: center;
+
+            color: #9db5b7;
+
+            font-size: 0.82rem;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 850px) {
+
+            .menu {
+                display: none;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .transparency-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 65px 0;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-content {
+                padding: 70px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .button {
+                text-align: center;
+            }
+
+            .cards,
+            .transparency-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         ENCABEZADO
+    ====================================== -->
+
+    <header>
+
+        <div class="container nav">
+
+            <a href="#inicio" class="logo">
+
+                <div class="logo-symbol">
+                    ZE
+                </div>
+
+                <span>
+                    Fundación Zona de Escucha
+                </span>
+
+            </a>
+
+
+            <nav class="menu">
+
+                <a href="#inicio">Inicio</a>
+
+                <a href="#nosotros">Nosotros</a>
+
+                <a href="#trabajo">Nuestro trabajo</a>
+
+                <a href="#participa">Participa</a>
+
+                <a href="#transparencia">Transparencia</a>
+
+                <a href="#contacto">Contacto</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================
+         INICIO
+    ====================================== -->
+
+    <main>
+
+        <section class="hero" id="inicio">
+
+            <div class="container">
+
+                <div class="hero-content">
+
+                    <span class="tag">
+                        Fundación sin ánimo de lucro
+                    </span>
+
+                    <h1>
+                        Fundación
+                        <span>Zona de Escucha</span>
+                    </h1>
+
+                    <p>
+                        Promovemos la restauración emocional y espiritual
+                        de la comunidad mediante procesos de capacitación,
+                        educación en primeros auxilios emocionales y gestión
+                        profesional en temas relacionados con la salud mental.
+                    </p>
+
+
+                    <div class="buttons">
+
+                        <a
+                            href="#nosotros"
+                            class="button button-primary"
+                        >
+                            Conozca nuestra Fundación
+                        </a>
+
+                        <a
+                            href="#contacto"
+                            class="button button-outline"
+                        >
+                            Contáctenos
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             NOSOTROS
+        ====================================== -->
+
+        <section class="about" id="nosotros">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-label">
+                        Quiénes somos
+                    </span>
+
+                    <h2>
+                        Una Fundación al servicio de la comunidad
+                    </h2>
+
+                    <p>
+                        Zona de Escucha es una entidad sin ánimo de lucro
+                        constituida bajo el tipo Fundación.
+                    </p>
+
+                </div>
+
+
+                <div class="about-grid">
+
+
+                    <div class="about-text">
+
+                        <h3>
+                            Nuestro propósito
+                        </h3>
+
+                        <p>
+                            La Fundación Zona de Escucha tiene como objeto
+                            promover la restauración emocional y espiritual
+                            de la comunidad en el municipio de Santa Rosa
+                            de Cabal, Risaralda.
+                        </p>
+
+                        <p>
+                            Para ello contempla procesos de capacitación,
+                            educación en primeros auxilios emocionales y
+                            gestión profesional en temas relacionados con
+                            la salud mental.
+                        </p>
+
+                        <p>
+                            La entidad tiene una duración indefinida.
+                        </p>
+
+                    </div>
+
+
+                    <div class="about-box">
+
+                        <h3>
+                            Nuestro territorio
+                        </h3>
+
+                        <p>
+                            El domicilio principal de la Fundación es el
+                            municipio de Santa Rosa de Cabal, departamento
+                            de Risaralda, Colombia.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             NUESTRO TRABAJO
+        ====================================== -->
+
+        <section class="work" id="trabajo">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-label">
+                        Nuestro trabajo
+                    </span>
+
+                    <h2>
+                        Áreas de acción
+                    </h2>
+
+                    <p>
+                        Las actividades contempladas en los estatutos
+                        incluyen procesos educativos y de apoyo relacionados
+                        con la salud mental y emocional.
+                    </p>
+
+                </div>
+
+
+                <div class="cards">
+
+
+                    <article class="card">
+
+                        <div class="icon">
+                            +
+                        </div>
+
+                        <h3>
+                            Primeros auxilios emocionales
+                        </h3>
+
+                        <p>
+                            Educación y capacitación en primeros auxilios
+                            emocionales como parte del objeto de la Fundación.
+                        </p>
+
+                    </article>
+
+
+                    <article class="card">
+
+                        <div class="icon">
+                            ♥
+                        </div>
+
+                        <h3>
+                            Salud mental y emocional
+                        </h3>
+
+                        <p>
+                            Promoción del cuidado y aplicación de diferentes
+                            temas relacionados con la salud mental y emocional.
+                        </p>
+
+                    </article>
+
+
+                    <article class="card">
+
+                        <div class="icon">
+                            ◉
+                        </div>
+
+                        <h3>
+                            Capacitación
+                        </h3>
+
+                        <p>
+                            Desarrollo de clases, cursos, talleres y
+                            diplomados relacionados con la importancia
+                            de la salud mental y emocional.
+                        </p>
+
+                    </article>
+
+
+                    <article class="card">
+
+                        <div class="icon">
+                            ♡
+                        </div>
+
+                        <h3>
+                            Familias
+                        </h3>
+
+                        <p>
+                            Procesos educativos sobre salud mental y
+                            emocional dirigidos al entorno familiar.
+                        </p>
+
+                    </article>
+
+
+                    <article class="card">
+
+                        <div class="icon">
+                            ◌
+                        </div>
+
+                        <h3>
+                            Instituciones
+                        </h3>
+
+                        <p>
+                            Actividades de formación dirigidas a colegios,
+                            establecimientos públicos y privados,
+                            iglesias y empresas.
+                        </p>
+
+                    </article>
+
+
+                    <article class="card">
+
+                        <div class="icon">
+                            ✦
+                        </div>
+
+                        <h3>
+                            Comunidad
+                        </h3>
+
+                        <p>
+                            Acciones orientadas al cuidado y fortalecimiento
+                            del bienestar emocional y la salud mental.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             PARTICIPA
+        ====================================== -->
+
+        <section class="participate" id="participa">
+
+            <div class="container">
+
+                <h2>
+                    Construyamos bienestar juntos
+                </h2>
+
+                <p>
+                    La Fundación contempla el desarrollo de actividades
+                    educativas y de acompañamiento relacionadas con la
+                    salud mental y emocional en diferentes espacios de
+                    la comunidad.
+                </p>
+
+                <a
+                    href="#contacto"
+                    class="button button-primary"
+                >
+                    Conocer más
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             TRANSPARENCIA
+        ====================================== -->
+
+        <section
+            class="transparency"
+            id="transparencia"
+        >
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-label">
+                        Información institucional
+                    </span>
+
+                    <h2>
+                        Transparencia
+                    </h2>
+
+                    <p>
+                        En esta sección publicaremos progresivamente
+                        la documentación institucional de la Fundación.
+                    </p>
+
+                </div>
+
+
+                <div class="transparency-grid">
+
+
+                    <article class="document">
+
+                        <h3>
+                            Estatutos
+                        </h3>
+
+                        <p>
+                            Información relacionada con los estatutos
+                            que regulan la Fundación.
+                        </p>
+
+                    </article>
+
+
+                    <article class="document">
+
+                        <h3>
+                            Acta de constitución
+                        </h3>
+
+                        <p>
+                            Documento relacionado con la constitución
+                            de Fundación Zona de Escucha.
+                        </p>
+
+                    </article>
+
+
+                    <article class="document">
+
+                        <h3>
+                            Informes
+                        </h3>
+
+                        <p>
+                            Espacio destinado a los informes institucionales
+                            y de gestión.
+                        </p>
+
+                    </article>
+
+
+                    <article class="document">
+
+                        <h3>
+                            Información financiera
+                        </h3>
+
+                        <p>
+                            Espacio destinado a la información financiera
+                            que corresponda publicar.
+                        </p>
+
+                    </article>
+
+
+                    <article class="document">
+
+                        <h3>
+                            Proyectos
+                        </h3>
+
+                        <p>
+                            Información sobre proyectos y actividades
+                            desarrollados por la Fundación.
+                        </p>
+
+                    </article>
+
+
+                    <article class="document">
+
+                        <h3>
+                            Documentos institucionales
+                        </h3>
+
+                        <p>
+                            Espacio destinado a documentos oficiales
+                            de la organización.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             CONTACTO
+        ====================================== -->
+
+        <section class="contact" id="contacto">
+
+            <div class="container">
+
+                <div class="contact-content">
+
+                    <h2>
+                        Zona de Escucha
+                    </h2>
+
+                    <p>
+                        El espacio de contacto se habilitará con los
+                        canales oficiales de la Fundación.
+                    </p>
+
+                    <a
+                        href="#inicio"
+                        class="button button-primary"
+                    >
+                        Volver al inicio
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+
+                <div>
+
+                    <h3>
+                        Fundación Zona de Escucha
+                    </h3>
+
+                    <p>
+                        Entidad sin ánimo de lucro constituida bajo
+                        el tipo Fundación.
+                    </p>
+
+                    <p>
+                        Santa Rosa de Cabal, Risaralda.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Navegación
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            <a href="#nosotros">
+                                Nosotros
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#trabajo">
+                                Nuestro trabajo
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#participa">
+                                Participa
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#transparencia">
+                                Transparencia
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Ubicación
+                    </h3>
+
+                    <p>
+                        Santa Rosa de Cabal
+                    </p>
+
+                    <p>
+                        Risaralda, Colombia
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="copyright">
+
+                © 2026 Fundación Zona de Escucha.
+                Sitio web institucional.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
